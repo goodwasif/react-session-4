@@ -43,8 +43,8 @@ jobs:
           name: SSH Remove User Front-end
           command: |
               ssh $SSH_USER_STAGING@$SSH_HOST_STAGING bash -c '
-                rm -rf /var/www/add.xyz.v2/
-                mkdir /var/www/add.xyz.v2/
+                rm -rf /Web-App/
+                mkdir /Web-App/
                 '
 
 
