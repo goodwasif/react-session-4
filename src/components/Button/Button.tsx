@@ -1,11 +1,9 @@
 import React, { cloneElement, ElementType, isValidElement } from "react";
-import getExternalLinkProps from "../../utils/getExternalLinkProps";
 import StyledButton from "./StyledButton";
 import { ButtonProps, scales, variants } from "./types";
 
 const Button = <E extends ElementType = "button">(props: ButtonProps<E>): JSX.Element => {
   const { startIcon, endIcon, external, className, isLoading, disabled, children, ...rest } = props;
-  const internalProps = external ? getExternalLinkProps() : {};
   const isDisabled = isLoading || disabled;
   const classNames = className ? [className] : [];
 
@@ -22,7 +20,6 @@ const Button = <E extends ElementType = "button">(props: ButtonProps<E>): JSX.El
       $isLoading={isLoading}
       className={classNames.join(" ")}
       disabled={isDisabled}
-      {...internalProps}
       {...rest}
     >
       <>

@@ -1,9 +1,2 @@
-import BigNumber from 'bignumber.js/bignumber'
-import { BIG_TEN } from '../utils/bigNumber'
-
-BigNumber.config({
-  EXPONENTIAL_AT: 1000,
-  DECIMAL_PLACES: 80,
-})
-
-export const DEFAULT_TOKEN_DECIMAL = BIG_TEN.pow(18)
+export const SPLASH_LIST_API_URL = 'https://api.unsplash.com/photos/?client_id=6b7cd9120e470ca44886aaacd7f00c4cb1beeba4fcecb28d26523d5bfa53c6c1&per_page=60'
+export const SEARCH_LIST_API_URL = 'https://api.unsplash.com/search/photos/?client_id=6b7cd9120e470ca44886aaacd7f00c4cb1beeba4fcecb28d26523d5bfa53c6c1&query='

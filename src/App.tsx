@@ -5,20 +5,15 @@ import history from './routerHistory'
 import GlobalStyle from './style/Global'
 import PageLoader from './components/PageLoader'
 import SuspenseWithChunkError from './components/SuspenseWithChunkError'
-import Header from 'components/Header'
 
-
-
+//Use lazy loading to improve page performace 
 const Home = lazy(() => import('./views/Home'))
-
 const App: React.FC = () => {
-
 
   return (
     <Router history={history}>
       <GlobalStyle />
       <SuspenseWithChunkError fallback={<PageLoader />}>
-        <Header />
           <Switch>
             <Route path="/" exact>
               <Home />
