@@ -14,13 +14,15 @@ const Home: React.FC = () => {
 
   useEffect(() => {
     getImageList();
-  }, [resetFlag]);
+    // eslint-disable-next-line
+  }, [resetFlag ]);
 
   //Work when search value change and also for no empty value
   useEffect(() => {
     if (searchString) {
       handleSearch(searchString);
     }
+    // eslint-disable-next-line
   }, [searchString]);
 
   return (

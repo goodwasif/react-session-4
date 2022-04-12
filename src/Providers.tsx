@@ -1,6 +1,5 @@
 import React from 'react'
 import { HelmetProvider } from 'react-helmet-async'
-import { Provider } from 'react-redux'
 import { ThemeContextProvider } from 'contexts/ThemeContext'
 import { RefreshContextProvider } from 'contexts/RefreshContext'
 import { ModalProvider } from 'widgets/Modal'

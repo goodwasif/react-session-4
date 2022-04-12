@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Helmet } from 'react-helmet-async'
-import { useLocation } from 'react-router'
 import Container from './Container'
 
 const StyledPage = styled(Container)`
@@ -21,8 +20,6 @@ const StyledPage = styled(Container)`
 `
 
 const PageMeta = () => {
-  const { pathname } = useLocation()
-
 
   return (
     <Helmet>
