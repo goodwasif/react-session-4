@@ -73,18 +73,18 @@ workflows:
           filters:
             branches:
               only:
-                - main
+                - develop
       - delete_code_develop:
           filters:
             branches:
               only:
-                - main
+                - develop
           requires:
             - build_code_develop
       - deploy_code_develop:
           filters:
             branches:
               only:
-                - main
+                - develop
           requires:
             - delete_code_develop
