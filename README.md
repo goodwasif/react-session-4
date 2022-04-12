@@ -1,6 +1,7 @@
-#CG Staking Codebase
-
-
+##For Setup
+User Node version >=14
+yarn install
+yarn start 
 ## Theme Impelementation
 
 For Color applying, please define color first in theme/types.ts under colors type. Then implement under dark and light theme file colors. 
