@@ -1,9 +1,9 @@
-import { Flex } from "components/Box";
 import React, { useEffect, useState } from "react";
-import { Button } from "components/Button";
-import { ImageGroup, Image } from "react-fullscreen-image";
 import styled from "styled-components";
+import { ImageGroup, Image } from "react-fullscreen-image";
 import useSplashList from "hooks/useSplashList";
+import { Flex } from "components/Box";
+import { Button } from "components/Button";
 
 const Home: React.FC = () => {
   const [searchString, setSearchString] = useState("");
@@ -14,16 +14,18 @@ const Home: React.FC = () => {
 
   useEffect(() => {
     getImageList();
-    // eslint-disable-next-line
-  }, [resetFlag ]);
+  }, [getImageList, resetFlag]);
 
   //Work when search value change and also for no empty value
   useEffect(() => {
-    if (searchString) {
-      handleSearch(searchString);
-    }
-    // eslint-disable-next-line
-  }, [searchString]);
+    const timeout = setTimeout(() => {
+      if (searchString) {
+        handleSearch(searchString);
+      }
+    }, 500);
+
+    return () => clearInterval(timeout);
+  }, [handleSearch, searchString]);
 
   return (
     <Flex flexDirection="column" mr={["8px", 0]}>
@@ -58,7 +60,6 @@ const Home: React.FC = () => {
               <Image
                 src={image.urls.regular}
                 alt="nature"
-                //this image component support Inline style to show image on Full-screen
                 style={{
                   position: "absolute",
                   top: 0,
@@ -70,7 +71,7 @@ const Home: React.FC = () => {
                   objectFit: "cover",
                 }}
               />
-            </li> 
+            </li>
           ))}
         </ul>
       </ImageGroup>

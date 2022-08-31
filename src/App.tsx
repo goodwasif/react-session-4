@@ -8,19 +8,22 @@ import SuspenseWithChunkError from './components/SuspenseWithChunkError'
 
 //Use lazy loading to improve page performace 
 const Home = lazy(() => import('./views/Home'))
+const MemoExample = lazy(() => import("./views/Memo"));
 const App: React.FC = () => {
 
   return (
     <Router history={history}>
       <GlobalStyle />
       <SuspenseWithChunkError fallback={<PageLoader />}>
-          <Switch>
-            <Route path="/" exact>
-              <Home />
-            </Route>
-          </Switch>
+        <Switch>
+          <Route path="/" exact>
+            <Home />
+          </Route>
+          <Route path="/memo" exact>
+            <MemoExample />
+          </Route>
+        </Switch>
       </SuspenseWithChunkError>
-
     </Router>
   );
 }
